@@ -16,11 +16,10 @@ public class Employee {
 		this.totalPay = 0;		
 	}
 	
-	public void setTotalPay( int hours, String name) {
+	public void setTotalPay( int hours) {
 		
 		int extHours;
 		
-		this.name = name;
 		this.hours = hours;
 		
 		if (hours>40)
@@ -29,11 +28,17 @@ public class Employee {
 			this.totalPay = (MAXHOUR * HOURLY_RATE1) + (extHours * HOURLY_RATE2);
 		}
 		else {
-			this.totalPay = HOURLY_RATE1;
+			this.totalPay = hours * HOURLY_RATE1;
 		}
 		
 	}
 	
+	public void setName(String name){
+		
+		
+		this.name = name;
+	
+	}
 	public double getTotalPay() {
 		return this.totalPay;
 	}
